@@ -11,3 +11,4 @@ execute in minecraft:overworld unless entity @e[type=villager,tag=WWSMP.Lobby.Tr
 execute in minecraft:creative unless entity @e[type=villager,tag=WWSMP.Lobby.Trigger,distance=0..] run summon villager 377 119 -53 {VillagerData:{profession:"farmer",level:99,type:"plains"},Invulnerable:1,PersistenceRequired:1,NoAI:1,CustomName:'"Click me to go to the WWSMP special lobby"',Tags:["WWSMP.Lobby.Trigger"]}
 scoreboard objectives add WWSMP.Mini.AW.TP trigger "Go to Airwars"
 scoreboard objectives add WWSMP.Trigger.Lobby.Command trigger "Go to lobby"
+say WWSMP Datapack loaded. Last updated: 22/5/27
