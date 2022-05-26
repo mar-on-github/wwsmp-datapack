@@ -1,1 +1,1 @@
-{"replace":false,"values":["wwsmp:daily","wwsmp:welcome","wwsmp:tickfunctions","wwsmp:itemmanager"]}
+{"replace":false,"values":["wwsmp:tick","wwsmp:manager/daily","wwsmp:manager/welcome","wwsmp:manager/items"]}
