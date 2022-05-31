@@ -3,9 +3,6 @@ execute as @e[scores={WWSMP.Trigger.Lobby.Command=1..},type=player,tag=!WWSMP.In
 scoreboard players reset @a WWSMP.Trigger.Lobby.Command
 scoreboard players enable @a[tag=!WWSMP.In.Lobby] WWSMP.Trigger.Lobby.Command
 # TPtolobby
-execute at @e[type=villager,tag=WWSMP.Lobby.Trigger] run kill @e[distance=..3,tag=!WWSMP.Lobby.Trigger,type=!player]
-execute at @e[type=villager,tag=WWSMP.Lobby.Trigger] run tag @a[distance=..5,scores={talked_to_vill=1..}] add WWSMP.Lobby.Triggered
-execute as @e[type=villager,tag=WWSMP.Lobby.Trigger] positioned as @s at @s run tp @s ~ ~ ~ ~5 4
 execute as @a[tag=WWSMP.Lobby.Triggered] run tellraw @s {"text":"You will now be send to the Witches World SMP special lobby.","color":"yellow"}
 execute as @a[tag=WWSMP.Lobby.Triggered,tag=!WWSMP.In.Lobby] run tellraw @a[tag=!WWSMP.Lobby.Triggered] [{"selector":"@s","color":"dark_green"},{"text":"went to the WWSMP lobby.","color":"yellow"}]
 execute in minecraft:speciallobby as @a[tag=WWSMP.Lobby.Triggered] run tp @s 11 61 0
@@ -51,21 +48,21 @@ execute if entity @a[tag=WWSMP.Mini.In.Mini] run function wwsmp:mini
 
 # WWSMP.Survival.Trigger
 execute in minecraft:speciallobby positioned -21 62 0 run tag @a[distance=..2] add WWSMP.Survival.Triggered
-execute as @a[tag=WWSMP.Survival.Triggered] run tellraw @s {"text":"You will now be send to the Witches World SMP survival world.","color":"yellow"}
+execute as @a[tag=WWSMP.Survival.Triggered] run tellraw @s [{"text":"You will now be send to the Witches World SMP survival world.","color":"yellow"},{"text":" Use ","color":"dark_red"},{"text":"/lobby","color":"dark_blue","clickEvent":{"action":"suggest_command","value":"/lobby"}},{"text":" to return.","color":"dark_red"}]
 tag @a[tag=WWSMP.Survival.Triggered] remove WWSMP.In.Lobby
 execute in minecraft:overworld as @a[tag=WWSMP.Survival.Triggered] run tp @s -137 115 101
 tag @a remove WWSMP.Survival.Triggered
 
 # WWSMP.Creative.Trigger
 execute in minecraft:speciallobby positioned -21 62 6 run tag @a[distance=..2] add WWSMP.Creative.Triggered
-execute as @a[tag=WWSMP.Creative.Triggered] run tellraw @s {"text":"You will now be send to the Witches World SMP Creative world.","color":"yellow"}
+execute as @a[tag=WWSMP.Creative.Triggered] run tellraw @s [{"text":"You will now be send to the Witches World SMP Creative world.","color":"yellow",},{"text":" Use ","color":"dark_red"},{"text":"/lobby","color":"dark_blue","clickEvent":{"action":"suggest_command","value":"/lobby"}},{"text":" to return.","color":"dark_red"}]
 tag @a[tag=WWSMP.Creative.Triggered] remove WWSMP.In.Lobby
 execute in minecraft:creative as @a[tag=WWSMP.Creative.Triggered] run tp @s 373 150 -48
 tag @a remove WWSMP.Creative.Triggered
 
 # WWSMP.Minigames.Trigger
 execute in minecraft:speciallobby positioned -21 62 -6 run tag @a[distance=..2] add WWSMP.Minigames.Triggered
-execute as @a[tag=WWSMP.Minigames.Triggered] run tellraw @s {"text":"You will now be send to the Witches World SMP Minigames gallery.","color":"yellow"}
+execute as @a[tag=WWSMP.Minigames.Triggered] run tellraw @s [{"text":"You will now be send to the Witches World SMP Minigames gallery.","color":"yellow"},{"text":" Use ","color":"dark_red"},{"text":"/lobby","color":"dark_blue","clickEvent":{"action":"suggest_command","value":"/lobby"}},{"text":" to return.","color":"dark_red"}]
 execute in minecraft:speciallobby as @a[tag=WWSMP.Minigames.Triggered] run tp @s -3 102 88
 tag @a remove WWSMP.Minigames.Triggered
 
