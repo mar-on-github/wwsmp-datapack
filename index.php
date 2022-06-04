@@ -1,17 +1,29 @@
 <?php
 require_once(__DIR__ . "/vendor/autoload.php");
-function topnav() {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__, '/.env.local');
+    $dotenv->load();
+function topnav()
+{
     echo "<div class=\"topnav\">";
-    topnavitem("/home","Home");
-    topnavitem("/news","News");
+    topnavitem("/home", "Home");
+    topnavitem("/news", "News");
     topnavitem("/bluemap", "Bluemap");
     echo "</div>";
 }
-function topnavitem(string $uri, string $name) {
+function topnavitem(string $uri, string $name)
+{
     if (($_SERVER['REQUEST_URI']) === $uri) {
-        echo "<a class=\"active\" href=\"" . $uri. "\">".$name."</a>";
-    } ELSE {
+        echo "<a class=\"active\" href=\"" . $uri . "\">" . $name . "</a>";
+    } else {
         echo "<a href=\"" . $uri . "\">" . $name . "</a>";
+    }
+}
+function sendmaramessage(string $message)
+{
+    $fp = @fsockopen("udp://" . ':' . $_ENV['rconpassword'] . '@localhost', $_ENV['rconport'], $errno, $errstr);
+    if ($fp) {
+        $request = chr(1) . chr(0) . chr(242) . chr(strlen($rcon)) . $rcon . pack("S", strlen('mail that_mar \"$message from anonymous\"')) . "mail that_mar \"$message from anonymous\"";
+        fwrite($fp, $request);
     }
 }
 ?>
@@ -65,9 +77,9 @@ function topnavitem(string $uri, string $name) {
 
 <body>
 
-<?php 
- topnav();
-?>
+    <?php
+        topnav();
+    ?>
 
     <div style="text-align: center;padding-left:16px">
         <h1>WWSMP web</h1>
@@ -77,31 +89,58 @@ function topnavitem(string $uri, string $name) {
 </body>
 
 </html>
-    <?php 
-    die;
+<?php
+        die;
     }
     if (($_SERVER['REQUEST_URI']) === '/news') {
-    ?>
-    
-</head>
-
-<body>
-
-<?php 
- topnav();
 ?>
 
-    <div style="text-align: center;padding-left:16px">
-        <p>As you can see, this page is a work in progress.</p>
+    </head>
+
+    <body>
+
         <?php
-        
+        topnav();
         ?>
-    </div>
 
-</body>
+        <div style="text-align: center;padding-left:16px">
+            <p>As you can see, this page is a work in progress.</p>
+            <?php
 
-</html>
+            ?>
+        </div>
+
+    </body>
+
+    </html>
 <?php
-    die;
+        die;
     }
-    ?>
+    if (($_SERVER['REQUEST_URI']) === '/contact') {
+?>
+    </head>
+
+    <body>
+
+        <?php
+        topnav();
+        ?>
+        <?php
+        if (isset($_POST['message'])) {
+            sendmaramessage($_POST['message']);
+            echo "<p>Message sent. Go <a href=\"/home\">back</a> now?</p>";
+        } else {
+
+        ?>
+<h1>Send message to @that_mar in WWSMP</h1>
+
+            <div style="text-align: center;padding-left:16px">
+                <form action="/contact" method="post" accept-charset="UTF-8">
+                    <input type="text" name="message">
+                    <input type="submit">
+                </form>
+        <?php
+        }
+        die;
+    }
+        ?>
