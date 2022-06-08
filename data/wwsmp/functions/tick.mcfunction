@@ -55,7 +55,7 @@ tag @a remove WWSMP.Survival.Triggered
 
 # WWSMP.Creative.Trigger
 execute in minecraft:speciallobby positioned -21 62 6 run tag @a[distance=..2] add WWSMP.Creative.Triggered
-execute as @a[tag=WWSMP.Creative.Triggered] run tellraw @s [{"text":"You will now be send to the Witches World SMP Creative world.","color":"yellow",},{"text":" Use ","color":"dark_red"},{"text":"/lobby","color":"dark_blue","clickEvent":{"action":"suggest_command","value":"/lobby"}},{"text":" to return.","color":"dark_red"}]
+execute as @a[tag=WWSMP.Creative.Triggered] run tellraw @s [{"text":"You will now be send to the Witches World SMP Creative world.","color":"yellow"},{"text":" Use ","color":"dark_red"},{"text":"/lobby","color":"dark_blue","clickEvent":{"action":"suggest_command","value":"/lobby"}},{"text":" to return.","color":"dark_red"}]
 tag @a[tag=WWSMP.Creative.Triggered] remove WWSMP.In.Lobby
 execute in minecraft:creative as @a[tag=WWSMP.Creative.Triggered] run tp @s 373 150 -48
 tag @a remove WWSMP.Creative.Triggered
