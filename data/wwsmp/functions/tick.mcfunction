@@ -31,16 +31,16 @@ gamemode survival @a[tag=WWSMP.In.Survival,tag=!wwsmp.mapeditor]
 execute in minecraft:creative as @a[distance=0..] run tag @s add WWSMP.In.Creative
 gamemode creative @a[tag=WWSMP.In.Creative,tag=!wwsmp.mapeditor]
 
-execute in minecraft:mini/normallive as @a[distance=0..] run tag @s add WWSMP.Mini.In.Mini
-execute in minecraft:mini/normallive as @a[distance=0..] run tag @s add WWSMP.In.Mini.NormalLive
+execute in minecraft:mini_normallive as @a[distance=0..] run tag @s add WWSMP.Mini.In.Mini
+execute in minecraft:mini_normallive as @a[distance=0..] run tag @s add WWSMP.In.Mini.NormalLive
 gamemode adventure @a[tag=WWSMP.In.Mini.NormalLive,tag=!wwsmp.mapeditor]
 
-execute in minecraft:mini/bedwars1 as @a[distance=0..] run tag @s add WWSMP.Mini.In.Mini
-execute in minecraft:mini/bedwars1 as @a[distance=0..] run tag @s add WWSMP.In.Mini.Bedwars1
+execute in minecraft:mini_bedwars1 as @a[distance=0..] run tag @s add WWSMP.Mini.In.Mini
+execute in minecraft:mini_bedwars1 as @a[distance=0..] run tag @s add WWSMP.In.Mini.Bedwars1
 gamemode survival @a[tag=WWSMP.In.Mini.Bedwars1,tag=!wwsmp.mapeditor]
 
-execute in minecraft:mini/airwars as @a[distance=0..] run tag @s add WWSMP.Mini.In.Mini
-execute in minecraft:mini/airwars as @a[distance=0..] run tag @s add WWSMP.In.Mini.airwars
+execute in minecraft:mini_airwars as @a[distance=0..] run tag @s add WWSMP.Mini.In.Mini
+execute in minecraft:mini_airwars as @a[distance=0..] run tag @s add WWSMP.In.Mini.airwars
 gamemode survival @a[tag=WWSMP.In.Mini.airwars,tag=!wwsmp.mapeditor]
 
 # Execute minifunctions only if player is in them
@@ -68,7 +68,7 @@ tag @a remove WWSMP.Minigames.Triggered
 
 # TPtominigames
 ### airwars
-execute as @a[scores={WWSMP.Mini.AW.TP=1..}] in minecraft:mini/airwars run tp 0 65 0
+execute as @a[scores={WWSMP.Mini.AW.TP=1..}] in minecraft:mini_airwars run tp 0 65 0
 scoreboard players reset @a WWSMP.Mini.AW.TP
 scoreboard players enable @a WWSMP.Mini.AW.TP
 
