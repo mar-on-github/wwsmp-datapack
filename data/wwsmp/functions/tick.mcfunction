@@ -82,6 +82,9 @@ execute in minecraft:speciallobby positioned -3 102 95 run tag @a[distance=..2] 
 scoreboard players set @a talked_to_vill 0
 
 # Lobby void falling protection
+execute in minecraft:speciallobby as @e[distance=0..,type=arrow] run kill @s
+execute in minecraft:speciallobby as @e[distance=0..,type=spectral_arrow] run kill @s
+execute in minecraft:speciallobby as @e[distance=0..,type=trident] run kill @s
 execute at @a[tag=WWSMP.In.Lobby,tag=!WWSMP.Lobby.high] positioned ~ 90 ~ run tag @p[distance=..20] add WWSMP.Lobby.high
 execute at @a[tag=WWSMP.In.Lobby] positioned ~ 50 ~ run tag @p[distance=..10] remove WWSMP.Lobby.high
 execute at @a[tag=WWSMP.In.Lobby,tag=!WWSMP.Lobby.high] positioned ~ 60 ~ run tellraw @p[distance=20..] "[Lobby system] It seems like you are falling. Allow me to lift you up a bit."
