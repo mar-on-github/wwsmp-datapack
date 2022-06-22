@@ -50,8 +50,15 @@ execute if entity @a[tag=WWSMP.Mini.In.Mini] run function wwsmp:mini
 execute in minecraft:speciallobby positioned -21 62 0 run tag @a[distance=..2] add WWSMP.Survival.Triggered
 execute as @a[tag=WWSMP.Survival.Triggered] run tellraw @s [{"text":"You will now be send to the Witches World SMP survival world.","color":"yellow"},{"text":" Use ","color":"dark_red"},{"text":"/lobby","color":"dark_blue","clickEvent":{"action":"suggest_command","value":"/lobby"}},{"text":" to return.","color":"dark_red"}]
 tag @a[tag=WWSMP.Survival.Triggered] remove WWSMP.In.Lobby
-execute in minecraft:overworld as @a[tag=WWSMP.Survival.Triggered] run tp @s -137 115 101
-tag @a remove WWSMP.Survival.Triggered
+execute in minecraft:overworld run setblock -137 214 101 barrier
+execute in minecraft:overworld as @a[tag=WWSMP.Survival.Triggered] run tp @s -137 215 101
+execute in minecraft:overworld as @a[tag=WWSMP.Survival.Triggered] run essentials:tprandom
+execute in minecraft:overworld positioned -137 215 101 as @a[distance=..2,tag=WWSMP.Survival.Triggered] run effect give @s blindness 20 255
+execute in minecraft:overworld positioned -137 215 101 as @a[distance=..2,tag=WWSMP.Survival.Triggered] run effect give @s slowness 20 255
+
+execute in minecraft:overworld positioned -137 215 101 as @a[distance=2..,tag=WWSMP.Survival.Triggered] run effect clear @s blindness
+execute in minecraft:overworld positioned -137 215 101 as @a[distance=2..,tag=WWSMP.Survival.Triggered] run effect clear @s slowness
+execute in minecraft:overworld positioned -137 215 101 as @a[distance=2..,tag=WWSMP.Survival.Triggered] run tag @s remove WWSMP.Survival.Triggered
 
 # WWSMP.Creative.Trigger
 execute in minecraft:speciallobby positioned -21 62 6 run tag @a[distance=..2] add WWSMP.Creative.Triggered
