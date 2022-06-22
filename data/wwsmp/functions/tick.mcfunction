@@ -52,9 +52,10 @@ execute in minecraft:speciallobby as @a[tag=WWSMP.Survival.Triggered,distance=0.
 tag @a[tag=WWSMP.Survival.Triggered] remove WWSMP.In.Lobby
 execute in minecraft:overworld run setblock -137 214 101 barrier
 execute in minecraft:speciallobby as @a[tag=WWSMP.Survival.Triggered,distance=0..] run execute in minecraft:overworld run tp @s -137 215 101
-execute in minecraft:overworld as @a[tag=WWSMP.Survival.Triggered] run enchant @a flame
 execute in minecraft:overworld positioned -137 215 101 as @a[distance=..2,tag=WWSMP.Survival.Triggered] run effect give @s blindness 20 255
 execute in minecraft:overworld positioned -137 215 101 as @a[distance=..2,tag=WWSMP.Survival.Triggered] run effect give @s slowness 20 255
+execute in minecraft:overworld positioned -137 215 101 as @a[distance=..2,tag=WWSMP.Survival.Triggered] run spreadplayers -136 101 5000 900000 false @s
+spreadplayers x z 5000 20000 false @s
 
 execute in minecraft:overworld positioned -137 215 101 as @a[distance=2..,tag=WWSMP.Survival.Triggered] run effect clear @s blindness
 execute in minecraft:overworld positioned -137 215 101 as @a[distance=2..,tag=WWSMP.Survival.Triggered] run effect clear @s slowness
