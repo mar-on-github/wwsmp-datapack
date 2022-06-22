@@ -52,7 +52,7 @@ execute as @a[tag=WWSMP.Survival.Triggered] run tellraw @s [{"text":"You will no
 tag @a[tag=WWSMP.Survival.Triggered] remove WWSMP.In.Lobby
 execute in minecraft:overworld run setblock -137 214 101 barrier
 execute in minecraft:overworld as @a[tag=WWSMP.Survival.Triggered] run tp @s -137 215 101
-execute in minecraft:overworld as @a[tag=WWSMP.Survival.Triggered] run essentials:tprandom
+execute in minecraft:overworld as @a[tag=WWSMP.Survival.Triggered] run enchant @a flame
 execute in minecraft:overworld positioned -137 215 101 as @a[distance=..2,tag=WWSMP.Survival.Triggered] run effect give @s blindness 20 255
 execute in minecraft:overworld positioned -137 215 101 as @a[distance=..2,tag=WWSMP.Survival.Triggered] run effect give @s slowness 20 255
 
