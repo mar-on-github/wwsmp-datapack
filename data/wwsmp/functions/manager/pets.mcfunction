@@ -1,0 +1,1 @@
+execute as @e[type=wolf] run execute if data entity @s Owner unless data entity @s {Invulnerable:1b} run data merge entity @s {Invulnerable:1b}
