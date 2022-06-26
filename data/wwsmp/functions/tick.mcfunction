@@ -96,5 +96,5 @@ execute in minecraft:speciallobby as @e[distance=0..,type=trident] run kill @s
 execute at @a[tag=WWSMP.In.Lobby,tag=!WWSMP.Lobby.high] positioned ~ 90 ~ run tag @p[distance=..20] add WWSMP.Lobby.high
 execute at @a[tag=WWSMP.In.Lobby] positioned ~ 50 ~ run tag @p[distance=..10] remove WWSMP.Lobby.high
 execute at @a[tag=WWSMP.In.Lobby,tag=!WWSMP.Lobby.high] positioned ~ 60 ~ run tellraw @p[distance=20..] "[Lobby system] It seems like you are falling. Allow me to lift you up a bit."
-execute at @a[tag=WWSMP.In.Lobby,tag=!WWSMP.Lobby.high] positioned ~ 60 ~ run tp @p[distance=20..] -12 85 0 90 100
-execute at @a[tag=WWSMP.In.Lobby,tag=!WWSMP.Lobby.high] positioned ~ 60 ~ run effect give @p[distance=20..] minecraft:slow_falling 100
+execute at @a[tag=WWSMP.In.Lobby,tag=!WWSMP.Lobby.high] positioned ~ 60 ~ run tp @p[distance=20..] -12 62 0 90 100
+
