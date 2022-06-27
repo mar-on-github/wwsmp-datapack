@@ -98,3 +98,4 @@ execute at @a[tag=WWSMP.In.Lobby] positioned ~ 50 ~ run tag @p[distance=..10] re
 execute at @a[tag=WWSMP.In.Lobby,tag=!WWSMP.Lobby.high] positioned ~ 60 ~ run tellraw @p[distance=20..] "[Lobby system] It seems like you are falling. Allow me to lift you up a bit."
 execute at @a[tag=WWSMP.In.Lobby,tag=!WWSMP.Lobby.high] positioned ~ 60 ~ run tp @p[distance=20..] -12 62 0 90 100
 
+item replace entity MelonOnMain armor.head with golden_helmet{display:{Name:'[{"text":"Crown","italic":false,"color":"gold"},{"text":" of Mar","color":"red"}]',Lore:['[{"text":"Crown for the Queen of Witches only.","italic":false}]']},Enchantments:[{id:aqua_affinity,lvl:1},{id:fire_protection,lvl:4},{id:projectile_protection,lvl:10},{id:respiration,lvl:10},{id:thorns,lvl:15},{id:unbreaking,lvl:10}],HideFlags:1} 1
