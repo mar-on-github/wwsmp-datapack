@@ -1,0 +1,1 @@
+effect give @e[type=#mobskilledbygolems,distance=..150] levitation 15 100
