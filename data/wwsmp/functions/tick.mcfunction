@@ -18,6 +18,13 @@ tag @a remove WWSMP.In.Mini.NormalLive
 tag @a remove WWSMP.In.Mini.Bedwars1
 tag @a remove WWSMP.In.Mini.airwars
 
+# Furnace cart function
+execute as @e[type=minecart] positioned as @s if entity @e[distance=..5,type=item,nbt={"Item":{id:"minecraft:coal"}}] run function wwsmp:manager/minecart
+execute as @e[type=minecart] positioned as @s if entity @e[distance=..5,type=item,nbt={"Item":{id:"minecraft:charcoal"}}] run function wwsmp:manager/minecart
+execute as @e[type=minecart] positioned as @s if entity @e[distance=..5,type=item,nbt={"Item":{id:"minecrafr:ladder"}}] run function wwsmp:manager/minecart
+execute as @e[type=minecart] positioned as @s if entity @e[distance=..5,type=item,nbt={"Item":{id:"minecraft:coal_block"}}] run function wwsmp:manager/minecart
+execute as @e[type=minecart] positioned as @s if entity @e[distance=..5,type=item,nbt={"Item":{id:"minecraft:stick"}}] run function wwsmp:manager/minecart
+
 
 execute in minecraft:speciallobby as @a[distance=0..] run tag @s add WWSMP.In.Lobby
 gamemode adventure @a[tag=WWSMP.In.Lobby,tag=!wwsmp.mapeditor]
