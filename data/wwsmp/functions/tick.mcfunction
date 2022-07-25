@@ -6,6 +6,7 @@ scoreboard players enable @a[tag=!WWSMP.In.Lobby] WWSMP.Trigger.Lobby.Command
 execute as @a[tag=WWSMP.Lobby.Triggered] run tellraw @s {"text":"You will now be send to the Witches World SMP special lobby.","color":"yellow"}
 execute as @a[tag=WWSMP.Lobby.Triggered,tag=!WWSMP.In.Lobby] run tellraw @a[tag=!WWSMP.Lobby.Triggered] [{"selector":"@s","color":"dark_green"},{"text":"went to the WWSMP lobby.","color":"yellow"}]
 execute in minecraft:speciallobby as @a[tag=WWSMP.Lobby.Triggered] run tp @s 11 61 0
+execute in minecraft:speciallobby as @a[tag=WWSMP.Lobby.Triggered] run effect clear @s
 execute in minecraft:speciallobby as @a[tag=WWSMP.Lobby.Triggered] run effect give @s minecraft:hero_of_the_village 200 10 true
 tag @a remove WWSMP.Lobby.Triggered
 
