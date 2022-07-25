@@ -24,6 +24,9 @@ execute as @e[type=minecart] positioned as @s if entity @e[distance=..5,type=ite
 execute as @e[type=minecart] positioned as @s if entity @e[distance=..5,type=item,nbt={"Item":{id:"minecrafr:ladder"}}] run function wwsmp:manager/minecart
 execute as @e[type=minecart] positioned as @s if entity @e[distance=..5,type=item,nbt={"Item":{id:"minecraft:coal_block"}}] run function wwsmp:manager/minecart
 execute as @e[type=minecart] positioned as @s if entity @e[distance=..5,type=item,nbt={"Item":{id:"minecraft:stick"}}] run function wwsmp:manager/minecart
+execute as @e[type=minecart] positioned as @s if entity @e[distance=..5,type=item,nbt={"Item":{id:"minecraft:bamboo"}}] run function wwsmp:manager/minecart
+execute as @e[type=minecart] positioned as @s if entity @e[distance=..5,type=item,nbt={"Item":{id:"minecraft:scaffolding"}}] run function wwsmp:manager/minecart
+
 
 
 execute in minecraft:speciallobby as @a[distance=0..] run tag @s add WWSMP.In.Lobby
